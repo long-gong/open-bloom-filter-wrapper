@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 from open_bloom_filter import BloomFilter
-import numpy as np
 
 if __name__ == "__main__":
     entries = 1000000
     fpr = 0.01
     bf = BloomFilter(entries, fpr)
-    print("size: %i, k: %i" % (len(bf), bf.num_hashes()))
+    print(
+        "size (number of bits): %i, number of hash functions: %i"
+        % (len(bf), bf.num_hashes())
+    )
 
     print(f"{entries}")
     for i in range(entries):
@@ -20,4 +22,3 @@ if __name__ == "__main__":
             cf += 1
         ct += 1
     print(f"fpr: {100.0 * cf / ct}%")
-
