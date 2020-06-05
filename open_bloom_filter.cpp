@@ -1,7 +1,5 @@
-#include "bloom_filter.hpp"
 #include <Python.h>
-
-#include <bits/stdc++.h>
+#include "bloom_filter.hpp"
 
 static PyObject *wrapper_obf_new(PyObject *self, PyObject *args);
 static PyObject *wrapper_obf_delete(PyObject *self, PyObject *args);
